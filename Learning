@@ -38,5 +38,26 @@ const secondNumber = numbers[1]; // 7
 const lastNumber = numbers[5]; // 25
 
 numbers[2] = 14
-console.log(numbers)//(1, 7, 14, 99, 5, 25) by inserting variable with declaraction it mutate the value within. with [2]=14 it changes the 'third number' within the array to 14.
+console.log(numbers)//[1, 7, 14, 99, 5, 25] by inserting variable with declaraction it mutate the value within. with [2]=14 it changes the 'third number' within the array to 14.
+console.log(numbers.length)//6
 
+numbers.push(26)
+numbers.unshift(0)
+console.log(numbers)//[0, 1, 7, 14, 99, 5, 25, 26]
+numbers.pop()//remove the element at the end of an array
+numbers.shift()//remove the element at the start of an array
+console.log(numbers)
+const sliceNumbers = numbers.slice(0, -1)
+console.log(sliceNumbers)
+
+const starter = ['tomato', 'cream', 'basil'];
+const main = ['lemon', 'thyme', 'chicken'];
+const dessert = ['apple', 'pastry', 'cream'];
+
+const dinner = [starter, main, dessert];
+
+const selectedStarter = dinner[0][0]; // Select tomato from the starter array
+const selectedMain = dinner[1][0];    // Select lemon from the main array
+const selectedDessert = dinner[2][0]; // Select apple from the dessert array
+const jaxMenu = [selectedStarter, selectedMain, selectedDessert];
+console.log(jaxMenu)
