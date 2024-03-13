@@ -30,3 +30,13 @@ const isVirtualPetHappy = true;
 const action = petAction(isVirtualPetHappy);
 console.log(action);
 
+//Aarays
+const numbers = [1, 7, 3, 99, 5, 25];
+
+const firstNumber = numbers[0]; // 1
+const secondNumber = numbers[1]; // 7
+const lastNumber = numbers[5]; // 25
+
+numbers[2] = 14
+console.log(numbers)//(1, 7, 14, 99, 5, 25) by inserting variable with declaraction it mutate the value within. with [2]=14 it changes the 'third number' within the array to 14.
+
