@@ -1,0 +1,32 @@
+const review = 0;
+const postsRemaining = "Jax";
+
+const expOne = review && postsRemaining
+console.log(expOne)
+
+if (review || postsRemaining) {
+    console.log("Thanks for your review! You have 19 posts remaining.");
+} else {console.log("This is falsy");
+}
+
+const username = 'supersonic456';
+const password = 'CorrectPassword';
+const passworedEntered = "WrongPassword"
+if (password === passworedEntered) {
+  console.log("Please provide a password");
+} else {
+  console.log("Incorrect Password")
+}
+
+const isVirtualPetHappy1 = null
+const action1 = isVirtualPetHappy21 ? 'wag tail' : 'whimper';
+console.log(action1)
+
+function petAction(isVirtualPetHappy) {
+    return isVirtualPetHappy ? 'wag tail' : 'whimper';
+}
+
+const isVirtualPetHappy = true;
+const action = petAction(isVirtualPetHappy);
+console.log(action);
+
