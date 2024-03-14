@@ -61,3 +61,25 @@ const selectedMain = dinner[1][0];    // Select lemon from the main array
 const selectedDessert = dinner[2][0]; // Select apple from the dessert array
 const jaxMenu = [selectedStarter, selectedMain, selectedDessert];
 console.log(jaxMenu)
+
+//For Loop
+//for (initialization; condition; iteration) {//code block to execute}
+for (let i = 0; i < 3; i++) {
+  console.log(i)
+}
+//i++ is i = i + 1
+//i-- is i = i - 1
+//i += 3 is i = i + 3
+//i -= 5 is i = i - 5
+
+const todoList = ['do the laundry', 'make dinner', 'mount the spice rack'];
+
+for (let i = 0; i < todoList.length; i++) {
+  const job = todoList[i]
+console.log(job)
+}
+
+for (let i = todoList.length - 1; i >= 0; i--) {
+  const jobBackward = todoList[i]
+  console.log(jobBackward)
+};
