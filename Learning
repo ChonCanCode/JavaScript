@@ -1,3 +1,5 @@
+12/03/2024
+//Objective - Start recording the progress with Github
 const review = 0;
 const postsRemaining = "Jax";
 
@@ -30,6 +32,7 @@ const isVirtualPetHappy = true;
 const action = petAction(isVirtualPetHappy);
 console.log(action);
 
+13/03/2024
 //Aarays
 const numbers = [1, 7, 3, 99, 5, 25];
 
@@ -62,6 +65,7 @@ const selectedDessert = dinner[2][0]; // Select apple from the dessert array
 const jaxMenu = [selectedStarter, selectedMain, selectedDessert];
 console.log(jaxMenu)
 
+14/03/2024
 //For Loop
 //for (initialization; condition; iteration) {//code block to execute}
 for (let i = 0; i < 3; i++) {
@@ -84,7 +88,7 @@ for (let i = todoList.length - 1; i >= 0; i--) {
   console.log(jobBackward)
 };
 
-
+15/03/2024
 //Write a for loop example but this time loop through an object instead of Arrays
 //Write an object with Key:Value 
 const morningRoutine = {
