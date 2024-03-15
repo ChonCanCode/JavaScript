@@ -83,3 +83,19 @@ for (let i = todoList.length - 1; i >= 0; i--) {
   const jobBackward = todoList[i]
   console.log(jobBackward)
 };
+
+
+//Write a for loop example but this time loop through an object instead of Arrays
+//Write an object with Key:Value 
+const morningRoutine = {
+  breakfast:'Cheese Sandwitch',
+  drink: 'Black coffee',
+  wokeUpTime: '6:15am',
+  reading: false,
+  gaming: true,
+}
+
+for (let key in morningRoutine)
+console.log('15/03/2024 Morning routine ' + key + ':' + morningRoutine[key])
+
+
