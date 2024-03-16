@@ -65,7 +65,7 @@ const selectedDessert = dinner[2][0]; // Select apple from the dessert array
 const jaxMenu = [selectedStarter, selectedMain, selectedDessert];
 console.log(jaxMenu)
 
-14/03/2024
+//14/03/2024
 //For Loop
 //for (initialization; condition; iteration) {//code block to execute}
 for (let i = 0; i < 3; i++) {
@@ -88,7 +88,7 @@ for (let i = todoList.length - 1; i >= 0; i--) {
   console.log(jobBackward)
 };
 
-15/03/2024
+//15/03/2024
 //Write a for loop example but this time loop through an object instead of Arrays
 //Write an object with Key:Value 
 const morningRoutine = {
@@ -101,5 +101,32 @@ const morningRoutine = {
 
 for (let key in morningRoutine)
 console.log('15/03/2024 Morning routine ' + key + ':' + morningRoutine[key])
+
+//16/03/2024
+//Write a for loop with if statement
+// syntax error example below//when writing object ':' to establish key:value and ',' to separate each properties
+User
+const journel = {
+  wordCount= 250
+  topic = 'Work out routine'
+  squat = 50
+  Protein = true
+}
+
+for (let key in journel) {
+  console.log(journel[key])
+}
+//correct version
+const journel = {
+  wordCount: 250,
+  topic:'Work out routine',
+  squat: 50,
+  Protein: true
+}
+
+for (let key in journel) {
+  console.log(journel[key])
+}
+
 
 
