@@ -106,27 +106,119 @@ console.log('15/03/2024 Morning routine ' + key + ':' + morningRoutine[key])
 //Write a for loop with if statement
 // syntax error example below//when writing object ':' to establish key:value and ',' to separate each properties
 User
-const journel = {
+const journal = {
   wordCount= 250
   topic = 'Work out routine'
   squat = 50
   Protein = true
 }
 
-for (let key in journel) {
+for (let key in journal) {
   console.log(journel[key])
 }
 //correct version
-const journel = {
+const journal = {
   wordCount: 250,
   topic:'Work out routine',
   squat: 50,
   Protein: true
 }
 
-for (let key in journel) {
+for (let key in journal) {
   console.log(journel[key])
 }
+
+//17/03/2024
+//Objective for today, breakdown down each step and the logic of the code block below.
+function sortTheKitchen(kitchen){
+}
+kitchen = {
+   hasFridge: true,
+  favouriteAppliance: 'KeTtlE',
+  food: 'eGgS',
+  shelvesInCupboards: 3,
+  shelvesNotInCupboards: 2,
+  petName: 'RhuBarB',
+  hoover: 'DysOn'
+  }
+for (let key in kitchen){
+  if (typeof kitchen[key] === "string"){
+    kitchen[key] = kitchen[key].toLowerCase()
+//1. The left side of the = (kitchen[key]) is used to access the value associated with the 
+current property key within the kitchen object. This allows you to retrieve and 
+modify the value stored in that property.
+//2. The right side of the = (kitchen[key].toLowerCase()) specifies what action to
+ perform on the value obtained from kitchen[key]. In this case, it calls the 
+ toLowerCase() method on the value, which converts it to lowercase.
+//
+  }
+}
+function sortTheKitchen(kitchen) {
+     console.log(kitchen); // Logging the original kitchen state
+
+    // Fix jumbled string values
+    for (let key in kitchen) {
+        if (typeof kitchen[key] === 'string') {
+            kitchen[key] = kitchen[key].toLowerCase();
+        }
+    }
+
+    // Remove the hoover property
+    delete kitchen.hoover;
+
+    // Calculate total number of shelves and remove individual shelf properties
+    let totalShelves = 0;
+    if (kitchen.hasOwnProperty('shelvesInCupboards')) {
+        totalShelves += kitchen.shelvesInCupboards;
+        delete kitchen.shelvesInCupboards;
+    }
+    if (kitchen.hasOwnProperty('shelvesNotInCupboards')) {
+        totalShelves += kitchen.shelvesNotInCupboards;
+        delete kitchen.shelvesNotInCupboards;
+    }
+
+    // Add a key of totalShelves
+    kitchen.totalShelves = totalShelves;
+
+    return kitchen;
+}
+
+function sortTheKitchen(kitchen) {
+    console.log(kitchen);
+    // Don't change the code below this line
+
+
+    for (let key in kitchen) {
+        if (typeof kitchen[key] === 'string') {
+            kitchen[key] = kitchen[key].toLowerCase();
+        }
+    }
+    delete kitchen.hoover;
+
+
+for (let key in kitchen){
+  if (typeof kitchen[key] === "string"){
+    kitchen[key] = kitchen[key].toLowerCase()
+  }
+ }
+  delete kitchen.hoover;
+
+  if ("shelvesInCupboards" in kitchen && "shelvesNotInCupboards" in kitchen) {
+    let totalShelves = kitchen.shelvesInCupboards + kitchen.shelvesNotInCupboards;
+    delete kitchen.shelvesInCupboards;
+    delete kitchen.shelvesNotInCupboards;
+    kitchen.totalShelves = totalShelves;
+  } else if ("shelvesInCupboards" in kitchen) {
+        kitchen.totalShelves = kitchen.shelvesInCupboards;
+        delete kitchen.shelvesInCupboards;
+    } else if ("shelvesNotInCupboards" in kitchen) {
+        kitchen.totalShelves = kitchen.shelvesNotInCupboards;
+        delete kitchen.shelvesNotInCupboards;
+  }
+      return kitchen;
+}
+
+
 
 
 
