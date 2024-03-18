@@ -218,6 +218,28 @@ for (let key in kitchen){
       return kitchen;
 }
 
+//18/03/2024
+//Revisting previous challenges and try to come up with my own solution
+//Understand the logic and function better, but still many syntax errors.
+//Practice makes perfect lets keep trying
+//May try the same question with differernt answer to see how the logic work from another direction
+
+function sayHello(country, time) {
+  let greeting;
+  if ((time >= 0 && time < 12) && (country === 'Spain' || country === 'Mexico')){greeting = 'buenos dias'} 
+  else if ((time >= 0 && time < 12) && (country === 'France')){greeting = 'bon matin'}
+  else if ((time >= 12 && time < 24) && (country === 'Spain' || country === 'Mexico')){greeting = 'buenas noches'}
+  else if ((time >= 12 && time < 24) && (country === 'France')){greeting = 'bon soir'}
+  else {greeting = null}
+  return greeting;
+}
+
+function canWeBuyIt(secret, funds) {
+  const isPasswordCorrect = secret === 'hunter2'
+  const isAffordable = funds >= 10.99
+  const isPurchasable = isPasswordCorrect && isAffordable 
+  return { isPasswordCorrect, isAffordable, isPurchasable };
+}
 
 
 
