@@ -241,6 +241,30 @@ function canWeBuyIt(secret, funds) {
   return { isPasswordCorrect, isAffordable, isPurchasable };
 }
 
+//26.03.2024
+//.every()// often followed by => arrow function his is because .every() expects a callback function as an argument, and arrow functions provide 
+a concise and convenient syntax for defining such functions.
 
+function checkIfHealthyColony(colony,hasAntidote) {
+  const isHealthy = hasAntidote || colony.every(colonyMember => colonyMember.type !== "zombie");
+
+  return isHealthy;
+  }
+
+
+function checkIfHealthyColony(colony, hasAntidote) {
+  let isThereZombie = false;
+  
+  for (let member of colony) {
+    if (member.type === "zombie") {
+      isThereZombie = true;
+      break; // Once a zombie is found, no need to continue the loop
+    }
+  }
+  
+  const isHealthy = hasAntidote || !isThereZombie;
+  
+  return isHealthy;
+}
 
 
