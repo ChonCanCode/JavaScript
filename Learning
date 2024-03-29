@@ -1,8 +1,12 @@
 Operators
 //.type
-^^if (typeof kitchen[key] === "string){} is a property accessor used to access the value stored in the type property of an object.
+    //if (typeof kitchen[key] === "string){}
+    //is a property accessor used to access the value stored in the type property of an object.
 //typeof  
-^^if (member.type === "zombie"){} is an operator used to determine the type of a variable or expression.
+    //if (member.type === "zombie"){} 
+    //is an operator used to determine the type of a variable or expression.
+
+//Control Flow Statement 
 //for (let...in)
     //The for...in loop iterates over the enumerable properties of an object, including properties inherited from its prototype chain.
     //It iterates over the keys (property names) of an object.
