@@ -1,4 +1,4 @@
-Operators
+//Operators
 //.type
     //if (typeof kitchen[key] === "string){}
     //is a property accessor used to access the value stored in the type property of an object.
