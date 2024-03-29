@@ -1,3 +1,17 @@
+Operators
+//.type
+^^if (typeof kitchen[key] === "string){} is a property accessor used to access the value stored in the type property of an object.
+//typeof  
+^^if (member.type === "zombie"){} is an operator used to determine the type of a variable or expression.
+//for (let...in)
+    //The for...in loop iterates over the enumerable properties of an object, including properties inherited from its prototype chain.
+    //It iterates over the keys (property names) of an object.
+    //It's typically used with OBJECT to enumerate their properties.
+//for (let...of)
+    //The for...of loop iterates over the values of an iterable object, such as arrays, strings, or objects that implement the iterable protocol.
+    //It directly accesses the values of the collection.
+    //It's commonly used with ARRAY to iterate over their elements.
+
 12/03/2024
 //Objective - Start recording the progress with Github
 const review = 0;
