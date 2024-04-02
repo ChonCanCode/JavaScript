@@ -285,4 +285,32 @@ function checkIfHealthyColony(colony, hasAntidote) {
   return isHealthy;
 }
 
+//02.04.2024
+// Adjusted the answer, declared a new variable and at the end of the if statement assign it again. 
+  function sortTheKitchen(kitchen) {
+    console.log(kitchen);
+    for (let key in kitchen){
+        if (typeof kitchen[key] === "string")
+        {kitchen[key] = kitchen[key].toLowerCase()
+        }
+    }
+    delete kitchen.hoover
 
+    let totalShelves = 0
+    
+    if ("shelvesInCupboards" in kitchen && "shelvesNotInCupboards" in kitchen) {
+        totalShelves = kitchen.shelvesInCupboards + kitchen.shelvesNotInCupboards;
+        delete kitchen.shelvesInCupboards;
+        delete kitchen.shelvesNotInCupboards;
+        kitchen.totalShelves = totalShelves;
+    }   else if ("shelvesInCupboards" in kitchen) {
+        let totalShelves = kitchen.shelvesInCupboards;
+        delete kitchen.shelvesInCupboards;
+        kitchen.totalShelves = totalShelves;
+    }   else if ("shelvesNotInCupboards" in kitchen) {
+        let totalShelves = kitchen.shelvesNotInCupboards;
+        delete kitchen.shelvesNotInCupboards;
+        kitchen.totalShelves = totalShelves;
+    }   
+    return kitchen;
+}
