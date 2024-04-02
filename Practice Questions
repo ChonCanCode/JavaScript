@@ -1,13 +1,41 @@
 //02.04.2024
-The greetFriend function will take a string of a name, and should return a string greeting them as in the examples below.
+//Q1 - `Hello ${name}!`
 
-Examples:
+//OP1
+function greetFriend(name) {
+    let greeting = "Hello" + " " + name + "!"
+    return greeting
+    }
+//OP2
+function greetFriend(name) {
+    let greeting = `Hello ${name}!`
+    return greeting
+    }
 
-greetFriend("Douglas");
-// returns 'Hello Douglas!'
+//Q2 - Addition 
+//OP1
+function add(a, b) {
+    let total = a + b
+    return total
+    }
+//OP2 - straight from return
+function add(a, b) {
+    return a + b
+    }
 
-greetFriend("Maddie");
-// returns 'Hello Maddie!'
+console.log(add(-1, 2)) 
 
-greetFriend("Poonam");
-// returns 'Hello Poonam!'
+//Q3 - Even/Odd (num % 2 === 0), condition ? valueIfTrue : valueIfFalse
+
+//OP1
+function oddOrEven(num) {
+    if (num % 2 === 0){
+        return "even"
+    } else {
+        return "odd"
+    }
+    }
+//OP2 - //ternary operator = condition ? valueIfTrue : valueIfFalse
+function oddOrEven(num) {
+    return num % 2 === 0? "even" : "odd";
+    }
