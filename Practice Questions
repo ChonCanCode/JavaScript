@@ -76,6 +76,20 @@ function findFirstOdd(numbers) {
     return undefined; // Return undefined if no odd number is found
 }
 
+//Q5
+//retrieving password 
+//OP1
+function retrievePassword(user) {
+    if ('password' in user) {
+        return user.password; 
+    } else {
+        return undefined; 
+    }
+}
 
+//OP2
+function retrievePassword(user) {
+    return "password" in user ? user.password : undefined;
+}
 
 
