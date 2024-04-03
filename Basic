@@ -314,3 +314,39 @@ function checkIfHealthyColony(colony, hasAntidote) {
     }   
     return kitchen;
 }
+
+//03.04.2024
+//figuring the differences between for...in an for...of
+
+//for...in
+function checkIfHealthyColony(colony, hasAntidote) {
+    let isThereZombie = false;
+    
+    for (let member in colony) {
+        if (colony[member].type === "zombie") {
+            isThereZombie = true;
+            console.log(colony[member].type);
+            break; // Once a zombie is found, no need to continue the loop
+        }
+    }
+    
+    const isHealthy = hasAntidote || !isThereZombie;
+    
+    return isHealthy;
+}
+
+//for...of
+function checkIfHealthyColony(colony, hasAntidote) {
+  let isThereZombie = false;
+  
+  for (let member of colony) {
+    if (member.type === "zombie") {
+      isThereZombie = true;
+      break; // Once a zombie is found, no need to continue the loop
+    }
+  }
+  
+  const isHealthy = hasAntidote || !isThereZombie;
+  
+  return isHealthy;
+}
