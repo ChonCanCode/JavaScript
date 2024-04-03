@@ -66,6 +66,16 @@ function practice(part, name, num, a,b) {
 
 console.log("//Practice answer:", (practice("num", null, 13, null, null)))
 
+//Q4
+function findFirstOdd(numbers) {
+    for (let number of numbers) {
+        if (number % 2 === 1) { // Check if number is odd
+            return number; // Return the first odd number found
+        }
+    }
+    return undefined; // Return undefined if no odd number is found
+}
+
 
 
 
