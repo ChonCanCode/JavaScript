@@ -39,3 +39,24 @@ function oddOrEven(num) {
 function oddOrEven(num) {
     return num % 2 === 0? "even" : "odd";
     }
+
+//03.04.2024
+// figured out a way to build up a function for testing different questions
+function practice(part, name, num, a,b) {
+  if (part === "name") {
+    let greeting = `Hello ${name}!`;
+    return greeting;
+  }
+
+  if (part === "num") {
+    let oddEven = num % 2 === 0 ? "even" : "odd";  
+    return oddEven;
+  }
+
+  if (part === "a&b") {
+    let totalNum = a + b;
+    return totalNum;
+  }
+}
+
+console.log(practice("name", null, 13, null, 5,6))
