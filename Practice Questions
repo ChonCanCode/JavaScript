@@ -43,6 +43,11 @@ function oddOrEven(num) {
 //03.04.2024
 // figured out a way to build up a function for testing different questions
 function practice(part, name, num, a,b) {
+  console.log("Part:", part)
+  console.log("Name:", name)
+  console.log("num",num)
+  console.log("a&b", a,b)
+  
   if (part === "name") {
     let greeting = `Hello ${name}!`;
     return greeting;
@@ -59,4 +64,8 @@ function practice(part, name, num, a,b) {
   }
 }
 
-console.log(practice("name", null, 13, null, 5,6))
+console.log("//Practice answer:", (practice("num", null, 13, null, null)))
+
+
+
+
