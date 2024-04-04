@@ -1,3 +1,37 @@
+//04.04.2024
+function practice(part, name, num, a,b, user) {
+    console.log("Part:", part)
+    console.log("Name:", name)
+    console.log("num",num)
+    console.log("a&b", a,b)
+    console.log("User:", user)
+    
+    if (part === "name") {
+      let greeting = `Hello ${name}!`;
+      return greeting;
+    }
+  
+    if (part === "num") {
+      let oddEven = num % 2 === 0 ? "even" : "odd";  
+      return oddEven;
+    }
+  
+    if (part === "a&b") {
+      let totalNum = a + b;
+      return totalNum;
+    }
+    if (part === "user"){
+        return "password" in user ? user.password : undefined;
+    }
+
+
+  }
+  
+  const user = { name: 'Lucy', password: 'n0rthc0derzzz' };
+  console.log(practice("user", null, null, null, null, user));
+
+
+
 //02.04.2024
 //Q1 - `Hello ${name}!`
 
@@ -35,36 +69,14 @@ function oddOrEven(num) {
         return "odd"
     }
     }
-//OP2 - //ternary operator = condition ? valueIfTrue : valueIfFalse
+//OP2
+//ternary operator = condition ? valueIfTrue : valueIfFalse
 function oddOrEven(num) {
     return num % 2 === 0? "even" : "odd";
     }
 
 //03.04.2024
 // figured out a way to build up a function for testing different questions
-function practice(part, name, num, a,b) {
-  console.log("Part:", part)
-  console.log("Name:", name)
-  console.log("num",num)
-  console.log("a&b", a,b)
-  
-  if (part === "name") {
-    let greeting = `Hello ${name}!`;
-    return greeting;
-  }
-
-  if (part === "num") {
-    let oddEven = num % 2 === 0 ? "even" : "odd";  
-    return oddEven;
-  }
-
-  if (part === "a&b") {
-    let totalNum = a + b;
-    return totalNum;
-  }
-}
-
-console.log("//Practice answer:", (practice("num", null, 13, null, null)))
 
 //Q4
 function findFirstOdd(numbers) {
@@ -79,6 +91,7 @@ function findFirstOdd(numbers) {
 //Q5
 //retrieving password 
 //OP1
+//if statement
 function retrievePassword(user) {
     if ('password' in user) {
         return user.password; 
@@ -88,6 +101,7 @@ function retrievePassword(user) {
 }
 
 //OP2
+//ternary operator = condition ? valueIfTrue : valueIfFalse
 function retrievePassword(user) {
     return "password" in user ? user.password : undefined;
 }
