@@ -1,3 +1,25 @@
+//05.04.2024
+function practice(key,value) {
+    console.log("//Key:",key,"//Value",value)
+    switch(key) {
+        case "name": 
+            if (typeof value === "string") {
+                return `Hello ${value}!`;
+                } else {
+                    throw "//Input not string.";
+                }
+        case "addition":
+            if (typeof )
+    }
+}
+
+
+let value = 123321
+console.log("//Result:",practice("name",value))
+
+
+
+
 //04.04.2024
 function practice(part, name, num, a,b, user) {
     console.log("Part:", part)
