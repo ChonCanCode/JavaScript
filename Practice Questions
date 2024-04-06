@@ -1,21 +1,39 @@
-//05.04.2024
-function practice(key,value) {
-    console.log("//Key:",key,"//Value",value)
-    switch(key) {
-        case "name": 
-            if (typeof value === "string") {
-                return `Hello ${value}!`;
+//06.04.2024
+function practice(key, value) {
+    try {
+        console.log(`//Key: "${key}"`,"//Value:", value);
+        switch (key) {
+            case "name":
+                if (typeof value === "string") {
+                    return `Hello, I am ${value}.`;
                 } else {
-                    throw "//Input not string.";
+                    throw "Input not in a 'string' format. e.g. value = 'Jax' ";
                 }
-        case "addition":
-            if (typeof )
+            case "addition":
+                if (Array.isArray(value)) {
+                    let sum = 0;
+                    for (let i = 0; i < value.length; i++) {
+                        if (typeof value[i] === "number") {
+                            sum += value[i]; 
+                        } else {
+                            throw "Elements in the array are not numbers.";
+                        }
+                    }
+                    return sum;
+                } else {
+                    throw "Input not in an 'Array' format. e.g. 'value = [1,2,3,4,5]' ";
+                }
+            default:
+                throw "Unable to allocate Key element to existing cases within the switch statement";
+        }
+    } catch (error) {
+        console.error("Caught error:", error);
+        return error;
     }
 }
 
-
-let value = 123321
-console.log("//Result:",practice("name",value))
+let value = ["Error","Testing"];
+console.log("//Result:", practice("addition", value));
 
 
 
