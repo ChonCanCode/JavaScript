@@ -7,7 +7,7 @@ function practice(key, value) {
                 if (typeof value === "string") {
                     return `Hello, I am ${value}.`;
                 } else {
-                    throw "Input not in a 'string' format. e.g. value = 'Jax' ";
+                    throw "Input not in a 'string' format. e.g. (value = 'Jax') ";
                 }
             case "addition":
                 if (Array.isArray(value)) {
@@ -16,25 +16,29 @@ function practice(key, value) {
                         if (typeof value[i] === "number") {
                             sum += value[i]; 
                         } else {
-                            throw "Elements in the array are not numbers.";
+                            throw "Value elements in the array are not numbers.";
                         }
                     }
                     return sum;
                 } else {
-                    throw "Input not in an 'Array' format. e.g. 'value = [1,2,3,4,5]' ";
+                    throw "Value element is not an 'Array' format. e.g. (value = [1,2,3,4,5]) ";
+                }
+            case "oddEven":
+                if (typeof value === "number") {
+                    return value % 2 === 0? "Even" : "Odd";
+                } else {
+                    throw "Value element not a 'number' format. e.g. (value = 50)"
                 }
             default:
-                throw "Unable to allocate Key element to existing cases within the switch statement";
+                throw `Unable to allocate the "${key}" element within the switch statement`;
         }
     } catch (error) {
-        console.error("Caught error:", error);
+        console.error("!Caught error!", error);
         return error;
     }
 }
-
-let value = ["Error","Testing"];
-console.log("//Result:", practice("addition", value));
-
+let value = "40";
+console.log("//Result:", practice("oddEven", value));
 
 
 
