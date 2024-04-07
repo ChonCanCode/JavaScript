@@ -166,3 +166,20 @@ function retrieveKey(person, value) {
     return value in person ? person[value] : undefined;
     }
 
+//07.04.2024
+//forgot to put return result; within the for...loop instead put inside the if statement. 
+// return result = []; allow the empty array to show if faulty.
+// .push to push inside the array at the end allowing result: ['Jinx'] as in an array.
+
+function findEvenLengthStrings(items) {
+  // Your code goes here...
+  let result = [];
+  for (let i = 0; i < items.length; i++) {
+    if (typeof items[i] === "string" && items[i].length % 2 === 0) {
+      result.push (items[i]);
+    }
+  }
+  return result;
+  }
+
+console.log(findEvenLengthStrings(['keepOnlyMe', 'notM', 4]))
