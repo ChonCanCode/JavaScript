@@ -1,3 +1,4 @@
+//Practice question version 2.0
 //06.04.2024
 function practice(key, value) {
     try {
@@ -41,7 +42,7 @@ let value = "40";
 console.log("//Result:", practice("oddEven", value));
 
 
-
+//Practice question version 1.0
 //04.04.2024
 function practice(part, name, num, a,b, user) {
     console.log("Part:", part)
@@ -67,8 +68,6 @@ function practice(part, name, num, a,b, user) {
     if (part === "user"){
         return "password" in user ? user.password : undefined;
     }
-
-
   }
   
   const user = { name: 'Lucy', password: 'n0rthc0derzzz' };
