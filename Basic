@@ -350,3 +350,29 @@ function checkIfHealthyColony(colony, hasAntidote) {
   
   return isHealthy;
 }
+
+//14.04.2024
+
+
+//"what's your perfect first date?".split("").map(parseInt).filter(a => a).reduce((a, b) => a + b).toString().split("").reverse().join(""))
+//JS Closures
+
+//Q2 - What is Function Expression?
+//anonymous function
+const square = function (num) {
+    return num * num;
+}
+
+console.log(square(5))
+
+//Q3 - What is first class function? - Functions can be passed into another functions
+
+const square = function (num) {
+    return num * num;
+}
+
+function displaySquare(fn) {
+    console.log("Square is " + fn(5))
+}
+
+displaySquare(square);
