@@ -183,3 +183,85 @@ function findEvenLengthStrings(items) {
   }
 
 console.log(findEvenLengthStrings(['keepOnlyMe', 'notM', 4]))
+
+//Q9 - MinMax
+
+function findBiggestAndSmallest(numbers) {
+    // Your code goes here...
+    const maxNum = Math.max(...numbers);
+    const minNum = Math.min(...numbers);
+    if (Array.isArray(numbers) && numbers.length > 0){
+    return {biggest: maxNum, smallest: minNum};
+    } else { return {}
+    }
+}
+
+//Q10 - Prime
+
+//Write a functino tht takes a single positive integar as its argument. If the number is prime it should return true otherwise it should return false. A prime number is a number that is divisible only by itself and 1 - for example 2,3,5,7 
+function checkIsPrime(num) {
+    if (num === 1) {
+        return false;
+    } else if (num > 1) {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true; // Moved outside the loop
+    }
+    // Removed unnecessary else statement
+}
+
+//Q10 - Uppercase name
+function greetGuest(name) {
+    if (name === "") {
+        return "Hello !";
+    }
+    
+    let key = name.split(""); // Split the name into an array of characters
+    key[0] = key[0].toUpperCase(); // Capitalize the first letter of the name
+    return `Hello ${key.join("")}!`; // Join the array back into a string and return
+}
+
+
+//Q11 - Find string
+
+function findTicketPrices(emailString) {
+    // Your code goes here...
+    for (let i = 0; i < emailString.length; i++) {
+        console.log('character ' + emailString[i] + ' looped.')
+        if (typeof emailString[i] !== "numbers") {
+            return false
+        } else {
+            return true
+        }
+    }
+    }
+
+    console.log(findTicketPrices("Hello, I think I can pay 11 pounds, is that alright?"))
+
+    function findTicketPrices(emailString) {
+        for (let i = 0; i < emailString.length; i++) {
+            console.log('character ' + emailString[i] + ' looped.');
+            if (!isNaN(parseInt(emailString[i]))) {
+                return true; // If a number is found, return true immediately
+            }
+        }
+        return false; // If no number is found, return false after checking all characters
+    }
+    
+    console.log(findTicketPrices("Hello, I think I can pay 11 pounds, is that alright?"));
+
+    function findTicketPrices(emailString) {
+        for (let i = 0; i < emailString.length; i++) {
+            const char = emailString[i];
+            // Check if the character is a digit (0-9)
+            if (char >= '0' && char <= '9') {
+                return true; // If a number is found, return true immediately
+            }
+        }
+        return false; // If no number is found, return false after checking all characters
+    }
+    
+    console.log(findTicketPrices("Hello, I think I can pay 11 pounds, is that alright?")); // Output: true
