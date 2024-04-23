@@ -265,3 +265,24 @@ function findTicketPrices(emailString) {
     }
     
     console.log(findTicketPrices("Hello, I think I can pay 11 pounds, is that alright?")); // Output: true
+
+
+
+//Q13
+
+function makeGuestList(person) {
+  // Your code goes here...
+  let result = {};
+  let names = person.name.split(" ");
+
+  let firstName = names[0];
+  let lastName = names[1];
+
+  result.firstName = firstName;
+  result.lastName = lastName;
+  result.age = person.age
+
+  return result
+  }
+
+  console.log(makeGuestList({ name: "Hannah Fry", age: 46 }));
