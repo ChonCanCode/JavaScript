@@ -286,3 +286,54 @@ function makeGuestList(person) {
   }
 
   console.log(makeGuestList({ name: "Hannah Fry", age: 46 }));
+//Q13
+function makeGuestList1(person) {
+    let result = {};
+    let names = person.name.split(" ");
+    let firstName = names[0];
+    let lastName = names[1];
+    
+    result.firstName = firstName;
+    result.lastName = lastName;
+    result.age = person.age;
+
+    return result;
+}
+console.log("Approach 1", makeGuestList1({ name: "Paul Erdős", age: 46 }));
+
+function makeGuestList(person) {
+    let result = {};
+    let names = person.name.split(" ");
+    let firstName = names[0];
+    let lastName = names[1];
+    
+    result.firstName = firstName;
+    result.lastName = lastName;
+    
+    for (let key in person) {
+        if (key !== 'name') {
+            result[key] = person[key];
+        }
+    }
+    
+    return result;
+}
+console.log("Approach 2", makeGuestList({ name: "Paul Erdős", age: 46 }));
+
+
+//Q14
+function trackAttendees(person, ticketCost) {
+    // Your code goes here...
+    let result = {}
+    let paidForTicket = Number(ticketCost)
+
+    for (let key in person) {
+        result[key] = person[key]
+    }
+    
+    result.paidForTicket = paidForTicket
+
+    return result 
+    }
+
+console.log("My Approach: ", trackAttendees({ firstName: "Ella", lastName: "Vaday", age: 30 }, '13'))
