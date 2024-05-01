@@ -337,3 +337,37 @@ function trackAttendees(person, ticketCost) {
     }
 
 console.log("My Approach: ", trackAttendees({ firstName: "Ella", lastName: "Vaday", age: 30 }, '13'))
+
+//01.05.2024
+//Q15
+function isPartyViable(guests) {
+    // Your code goes here...
+    let totalGuests = 0;
+    let totalSales = 0;
+
+    for (let i = 0; i < guests.length; i++) {
+        console.log ("keys looped:" + i) 
+            totalGuests++;
+            console.log ("totalGuests:" + totalGuests)
+            totalSales += guests[i].paidForTicket
+            console.log ("totalGuests:" + totalSales)
+        }
+    
+    if (totalGuests >= 5 && totalSales >= 100) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+const guests = [
+    { name: "diya", paidForTicket: 15 },
+    { name: "amul", paidForTicket: 20 },
+    { name: "saleh", paidForTicket: 2 },
+    { name: "philippa", paidForTicket: 30 },
+    { name: "kev", paidForTicket: 26 },
+    { name: "sarah", paidForTicket: 11 },
+  ]
+
+console.log(isPartyViable(guests));
