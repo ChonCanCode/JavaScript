@@ -384,3 +384,22 @@ function orderSupplies(supplies, guests) {
     }
 
 console.log("Result: " ,orderSupplies({ cake: 2, iceCream: 7 }, 2))
+
+
+//Q17
+
+function calculateTables(guests, seats) {
+    // Your code goes here...
+    let result = {}
+    let remainingGuests = guests % seats
+    let tables = Math.floor(guests / seats)
+
+    result.remainingGuests = remainingGuests
+    result.tables = tables
+
+    return result
+    }
+
+    console.log(calculateTables(26, 5));
+    // should return { tables: 2 , remainingGuests: 0 }
+    
