@@ -402,4 +402,20 @@ function calculateTables(guests, seats) {
 
     console.log(calculateTables(26, 5));
     // should return { tables: 2 , remainingGuests: 0 }
+
+
+//Q18
+function calculateTaxiFare(seconds) {
+    let mins = Math.ceil(seconds / 60);
+    
+    // Calculate cost
+    if (mins <= 3) {
+        return 500; 
+    } else {
+        return Math.ceil((mins - 3) * 70 + 500); 
+    }
+}
+
+console.log(calculateTaxiFare(491));
+    //// should return 920
     
