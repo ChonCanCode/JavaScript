@@ -459,3 +459,52 @@ function pickWinners(numbers) {
 }
     console.log(pickWinners([6, 7, 12, 49]))
     // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
+
+//Q20
+//My Approach
+function gatherFeedback(feedbackArray) {
+    result = {};
+    let positive = 0;
+    let negative = 0;
+    let neutral = 0
+
+    for (let i = 0; i < feedbackArray.length; i++) {
+        if (feedbackArray[i] >= 7 && feedbackArray[i] <= 10) {
+             positive++
+        } else if (feedbackArray[i] >= 4 && feedbackArray[i] <= 6) {
+            neutral++
+        } else if (feedbackArray[i] >= 0 && feedbackArray[i] <= 3) {
+            negative++
+        }
+        
+        result.positive = positive
+        result.negative = negative
+        result.neutral = neutral
+        }
+        return result
+    }
+//Correct Approach
+function gatherFeedback(feedbackArray) {
+        // Your code goes here...
+        result = {
+            positive: 0,
+            neutral: 0,
+            negative: 0,
+        }
+    
+    
+        for (let i = 0; i < feedbackArray.length; i++) {
+            let numberwithinArray = feedbackArray[i][1];
+            if (numberwithinArray >= 7 && numberwithinArray <= 10) {
+                 result.positive++;
+            } else if (numberwithinArray >= 4 && numberwithinArray <= 6) {
+                result.neutral++;
+            } else if (numberwithinArray >= 0 && numberwithinArray <= 3) {
+                result.negative++;
+            }
+            }
+            return result
+        }
+console.log(gatherFeedback([['maddie', 10], ['jatinder', 3], ['rose', 6]]));
+// returns {positive: 1, negative: 1, neutral:1}
+    
