@@ -36,6 +36,7 @@ const playerTwoMarker = "O";
 // console.log(`PlayerTwo Name: ${playerTwoName}, Marker: ${playerTwoMarker}`)
 
 //Example 2:
+//Origin objects
 const playerOne = {
     name:"tim",
     marker: "X",
@@ -58,9 +59,10 @@ const playerDetails = printDetails;
 
     //3. Object constructors
 //Common convention to use a capital letter as the first letter of a function name for constructor.
+///what is contructor? A special funcion used to create and initialise obects. It provide a blueprint/ reusable code to create more objects with similar properties and method(function)
 function Player(name, marker) {
     this.name = name;
-    this.marker = marker;
+    this.marker = marker;//these are properties
     this.sayName = function() {
         console.log(this.name)
     }
@@ -68,13 +70,13 @@ function Player(name, marker) {
 
 const player1 = new Player("Tim", "X");
 const player2 = new Player("Jenn", "O");
-//the "new" keyword is used t ocall the "Player" function and create a new object each time.
+//the "new" keyword is used to call the "Player" function and create a new object each time.
 
-console.log(player1)
-player1.sayName();
+//console.log(player1)
+//player1.sayName();
 
-//Exercise - Making "Book" objects. The book objects should have the book's "title", "author", number of "pages" & wheather it is "read".
-//put a function into the constructor that can report the book info like.. theHobbit.info(); // "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+///Exercise - Making "Book" objects. The book objects should have the book's "title", "author", number of "pages" & wheather it is "read".
+///put a function into the constructor that can report the book info like.. theHobbit.info(); // "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -82,7 +84,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
     this.info = function () {
-        return ${this.title}, ${this.author}, ${this.pages}, ${this.read}
+        return `${this.title}, ${this.author}, ${this.pages}, ${this.read}`
         //Using Concatenated String
         return [this.title, this.author, this.pages, this.read]
         //Using array
@@ -98,7 +100,60 @@ function Book(title, author, pages, read) {
 
 const theHobbit = new Book("The Hobbit by J.R.R.", "Tolkien", "295 pages", "not read yet")
 
-console.log(theHobbit.info());
+//console.log(theHobbit.info());
+
+Object.getPrototypeOf(player1) === Player.prototype;
+///".prototype" is an object automaticaly attached to every function in JS including constructor functions.
+
 
     //4. The prototype
-//All objects in JS have a prototype. The prototype is another object that the original object inherits from. The original object has access to all of its prototype's methods and properties.
+//All objects in JS have a prototype. It refers to the mechanism by which objects can inherit properties and methods from other objects. 
+//Functions in JS are also objects, have a special property called "proptotype".
+
+Player.prototype.sayHello = function() {
+    return "Hello I'm a player"
+}
+
+///Methods - refers to a function that is associted with an object. Methods are properties of objects that are defined as functions. 
+
+//console.log(player1.sayHello())
+
+// function Person(name) {
+//     this.name = name;
+//   };
+  
+//   Person.prototype.sayHello = function() {
+//     console.log(Hello, I am ${this.name})
+//   };
+  
+function Person1(name) {
+    this.name = name
+    this.sayHello1 = function () {
+        return `Hello, I am ${this.name}`
+    }
+  }
+
+  function Person1(name) {
+    this.winner = function () {
+        return `${name} is the winner!`
+    }
+  }
+
+//   const alice = new Person1('Alice');
+//   console.log(alice.winner());
+  
+
+    ////5. Object.getPrototypeOf() vs. .__proto__ vs. [[Prototype]]
+///"Object.getPrototypeOf()" is used to access an object's prototyp, ".__proto__" & [[Prototype]] also the same but outdated. 
+
+
+    ///6. Prototypal inheritance - What are the purposes?
+///Purpose 1 - Save memory. Defining every property and function takes up a lot of memory, especially there is a lot of common properties and functions. Centralisation!
+
+///Purpose 2 - Prototypal Interitance! e.g. "player1" object inherit from the "Player.prototype" object which allows them to acess functions like ".winner"
+
+
+Object.getPrototypeOf(Player.prototype) === Object.prototype
+
+console.log(player1.valueOf()); 
+
