@@ -152,8 +152,99 @@ function Person1(name) {
 
 ///Purpose 2 - Prototypal Interitance! e.g. "player1" object inherit from the "Player.prototype" object which allows them to acess functions like ".winner"
 
+// console.log(Player.prototype === Object.prototype)
+///^ this check if "Player.prototype" is strictly equal to "Object.prototype" where all prototype inherits from by default. which is fault because they are distinct object in memory.
 
-Object.getPrototypeOf(Player.prototype) === Object.prototype
+// console.log(Player.prototype.__proto__ === Object.prototype);
+///^ this checks if the internal "[[Prototype]]" ".getPrototypeOf()" ".__proto__ " of "Player.prototype" is "Object.prototype" which is true. This indicates that Player.prototype inherits from Object.prototype.
 
-console.log(player1.valueOf()); 
+// console.log(Object.getPrototypeOf(Player.prototype) === Object.prototype)
 
+
+// console.log(typeof player === "number")
+
+// console.log(player1.valueOf()); 
+
+let num = 10;
+// console.log(num.valueOf()); 
+
+///Presenting String as an Object - A "string" object can be created using "string" constructor with the "new" keyword. This wraps the string in an object, giving it additional properties and methods .
+
+let stringObject = new String ("Hello, world!");
+
+//console.log(typeof stringObject) /// return as object as "new" key word make it into a string.
+
+/// JS make use of prototype by having the objects contain a value to point to prototypes and ineriting from those prototypes, and thus forming a chain. This kind of inheritance using prototypes is hence 
+/// named as Prototypal inheritance.
+/// NOTE - 1. Every prototype object inherits from object.prototype by defualt
+/// NOTE - 2. An object's "Object.getProtottypeOf()" value can only be one unqiue "prototype" object.
+
+///In this case, Player.prototype inherits from Object.prototype, and consequently, all instances of Player (like player1 and player2) inherit from Object.prototype through the prototype chain.
+
+///"Object.getPrototypeOf()"" to ‘get’ or view the prototype of an object, we can use Object.setPrototypeOf() to ‘set’ or mutate it. 
+
+function Person3(name) {
+    this.name = name;
+}
+
+Person3.prototype.sayName = function() {
+    console.log(`Hello, I am ${this.name}!`);
+};
+
+function Player3(name, marker) {
+    this.name = name;
+    this.marker = marker;
+}
+
+Player3.prototype.getMarker = function () {
+    console.log(`My maker is ${this.marker}`)
+}
+
+Object.getPrototypeOf(Player3.prototype)
+
+Object.setPrototypeOf(Player3.prototype, Person3.prototype)
+Object.getPrototypeOf(Player3.prototype)
+
+const player4 = new Player3("steve", "X");
+const player5 = new Player3("also steve", "O");
+
+player4.sayName();
+player5.sayName();
+
+player4.getMarker();
+
+
+console.log(Object.getPrototypeOf(Person3) === Function.prototype)
+///^ "Object.getPrototypeOf(Person3)" This returns the prototype of the "Person3" function itself, which is "Function.prototype", not Object.prototype.
+console.log(Object.getPrototypeOf(Function.prototype) === Object.prototype)
+///^ "Function.prototype" All function objects in JavaScript inherit from "Function.prototype". This prototype itself inherits from "Object.prototype".
+///^ "Object.prototype" This is the end of the prototype chain for regular objects, and its prototype is null.
+
+function CarlPerson(name) {
+    this.name = name;
+  }
+  
+  CarlPerson.prototype.sayName = function() {
+    console.log(`Hello, I'm ${this.name}!`);
+  };
+  
+  function CarlPlayer(name, marker) {
+    this.name = name;
+    this.marker = marker;
+  }
+  
+  Object.setPrototypeOf(CarlPlayer.prototype, CarlPerson.prototype)
+  
+  function Carlnemy(name) {
+    this.name = name;
+    this.marker = '^';
+  }
+  
+  Object.setPrototypeOf(CarlEnemy.prototype, CarlPerson.prototype)
+  
+  CarlEnemy.prototype.sayName = function() {
+    console.log('HAHAHAHAHAHA');
+  };
+  
+  const carl = new CarlPlayer('carl', 'X');
+  carl.sayName();

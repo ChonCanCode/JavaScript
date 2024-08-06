@@ -13,3 +13,7 @@ I am creating a comprehensive guidebook catalog for my JavaScript learning journ
 
 **2024.07.30**
 - Continue Objects and Object Constructors
+
+**2024.08.02**
+- Time spent: 120 mins
+- Completed - Objects and Object Constructors
